@@ -1,0 +1,112 @@
+/* UV color scale */
+
+/* low 0-3: #558B2F */
+/* moderate 3-6: #F9A825 */
+/* high 6-8: #EF6C00 */
+/* very high 8-11: #B71C1C */
+/* extreme 11+: #6A1B9A */
+
+/* body{
+    background-color:#74bbfb;
+} */
+
+.header {
+    background-color: #e88548;
+}
+
+.linkText {
+    color: white;
+    font-size: 23px;
+    padding: 0px;
+}
+
+.blue {
+    color: rgb(38, 62, 250);
+}
+.bg-blue {
+    background-color: #74bbfb;
+    border: none;
+}
+.low {
+    color: #558B2F;
+}
+.moderate {
+    color: #F9A825;
+}
+.high {
+    color: #EF6C00;
+}
+.veryHigh {
+    color: #B71C1C;
+}
+.extreme {
+    color: #6A1B9A;
+}
+
+.header-img{
+  width: 100%;
+  
+}
+
+.link:hover {
+    text-decoration-line: none;
+}
+
+.backgroundImg {
+  background-color: #FFE169;
+  height: 100vh;
+  width: 100vw;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: left;
+  background-repeat: repeat;
+  
+  /* background-size: cover; */
+   background-size: 100% auto;
+}
+
+.backgroundImg2 {
+  height: 275px;
+  width: 100vw;
+  /* Create the parallax scrolling effect */
+  /* background-attachment: fixed;
+  background-position: center; */
+  background-repeat: no-repeat;
+  background-size: cover; 
+}
+
+.headerText {
+    margin: 0px 0px 5px 25px;
+    font-size: 75px;
+    font-style: italic;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+.sunImg{
+    width: 900px;
+}
+.spacer{
+    height: 50px;
+}
+.cardImg {
+    width: 100%;
+}
+.uvIndex {
+    width: 500px;
+}
+.skintone{
+    width: 800px;
+}
+.uvchart {
+    width: 650px;
+}
+.sandFooter {
+    height: 175px;
+  width: 100vw;
+  /* Create the parallax scrolling effect */
+  /* background-attachment: fixed; */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; 
+}
