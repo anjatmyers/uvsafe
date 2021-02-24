@@ -43,10 +43,9 @@ const App = (props) => {
         <div className="col m-3" >
       
           {/* <h3>See what your cities UV level falls on the range:</h3> */}
-      <div className="row">
+      <div className="row mt-4">
 
-
-      <div class="col-3 text-white" >
+      <div class="col-3 text-white offset-1" >
         {/* style={{backgroundImage: `url("images/umbrella.jpg")`}} */}
       {/* <img src={city.weather.img} class="card-img-top" alt="..."></img> */}
       <div className="card-img-overlay d-flex flex-column align-items-center justify-content-top">
@@ -59,19 +58,27 @@ const App = (props) => {
         </div>
         {/* end weather div col-3 */}
 
-      <div className="col-9">
-        <div className="row">
-            
-            <img className="col-6 offset-1 uvIndex" src="images/uvindexwheel.png"></img>
-            <div className="col-3">
-            <div className="col text-white mt-4"> <h3>Current UV Level: {city.uvData.uvCurrent}</h3></div>
-            <div className="col text-white mt-4"><h3>Max UV Level: {city.uvData.uvMax}</h3></div>
-            </div>
-            
-        </div>
-        {/* end mini uv wheel row */}
-      </div>
+        {/* <div className="col-4 ml-5">
+      <img className="uvIndex" src="images/uvindexwheel.png"></img>
+      </div> */}
       {/* end UV wheel div col-9 */}
+      <div className="col-7 ml-4">
+                <div className="jumbotron jumbotron-fluid uvCard">
+                  <div className="container">
+                    <h1 className="display-4">Current UV level: {city.uvData.uvCurrent}</h1>
+                    <h1 className="display-5">Max UV level today: {city.uvData.uvMax}</h1>
+                    <p className="lead">UV levels typically max out between 10am-2pm during what is refered to as 'solar noon.' Your skin is at greatest risk of damage during this time of the day.</p>
+                  </div>
+            </div>
+      </div>
+      {/* end jumbotron div */}
+
+
+     
+
+  
+
+     
         </div>
         {/* end row1 */}
        

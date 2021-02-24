@@ -14,6 +14,13 @@
     background-color: #e88548;
 }
 
+.headerBackground {
+    background-color: skyblue;
+    padding: 25px;
+    margin-bottom: 5px;
+    border-radius: 50%;
+}
+
 .linkText {
     color: white;
     font-size: 23px;
@@ -28,7 +35,7 @@
     border: none;
 }
 .low {
-    color: #558B2F;
+    color: #57b117;
 }
 .moderate {
     color: #F9A825;
@@ -83,8 +90,20 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     
 }
+
+.skintypeHeading {
+    background-color: lightblue;
+    padding: 30px;
+    border-radius: 50%;
+    font-style: italic;
+}
 .sunImg{
     width: 900px;
+}
+
+.uvCard{
+    border-radius: 5%;
+    padding: 15px;
 }
 .spacer{
     height: 50px;
@@ -92,9 +111,18 @@
 .cardImg {
     width: 100%;
 }
-.uvIndex {
-    width: 500px;
+
+@media screen and ( max-width: 949px ) {
+.uvIndex { width: 300px; }
 }
+@media screen and ( min-width:950px ) and ( max-width: 1280px ) {
+.uvIndex { width: 400px; }
+}
+@media screen and ( min-width: 1081px ) {
+.uvIndex { width: 500px; }
+}
+.uvIndex { height: auto; }
+
 .skintone{
     width: 800px;
 }
@@ -146,4 +174,10 @@
 .type1 {
     background-color: #E9D1B2;
     color: black;
+}
+
+.footerText {
+    background-color: tan;
+    padding: 5px;
+    border-radius: 10%;
 }

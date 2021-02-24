@@ -21,8 +21,8 @@ const SuncreenInfo = () => {
 
             <div className="container-fluid">
             <div className="col-11 d-flex flex-column align-items-center justify-content-center">
-            <h3 className="mt-4 text-white">What is a safe exposure time for your skin?</h3>
-            <div className=" mt-4 d-flex col-7  ">
+            <h3 className="mt-5"> <span className="skintypeHeading">Select a skin type to learn more:</span> </h3>
+            <div className=" mt-5 d-flex col-7 ">
 
             <button type="button" className="button type1 m-2" value={0} onClick={handleTypeChange}>Type I</button> 
             <button type="button" className="button type2 m-2" value={1} onClick={handleTypeChange}>Type II</button> 
@@ -32,7 +32,18 @@ const SuncreenInfo = () => {
             <button type="button" className="button type6 m-2" value={5} onClick={handleTypeChange}>Type VI</button>
             </div>
 
-    <h2 className="text-white mt-4">{type}</h2>
+            <div className="d-flex justify-content-center">
+            <div class="jumbotron ml-5 mt-4">
+                <h2 className="display-4">{type}</h2>
+                <p class="lead">This is the length of sun exposure that is safe for this skin type given the current UV level.</p>
+                <hr class="my-4"></hr>
+                <h2 className="display-4">{type}</h2>
+                <p class="lead">This is how long it would take this skin type to get their daily dose of vitamin D given the current UV level.</p>
+              
+                </div>
+
+            </div>
+            
             </div>
 
 

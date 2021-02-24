@@ -125,13 +125,20 @@ const Header = () => {
 
 <>
 <div className="backgroundImg2 d-flex flex-column justify-content-end align-items-left" style={{backgroundImage: `url("images/beachheader.jpg")`}}>
-    <div className="headerText"><span className="veryHigh">U</span><span className="high">V</span><span className="moderate">S</span><span className="low">a</span><span className="blue">f</span><span className="extreme">e</span></div>
+    <div className="headerText d-flex align-items-center h-75 ">
+        <div className="">
+        <span className="headerBackground">
+        <span className="veryHigh">U</span><span className="high">V</span><span className="moderate">S</span><span className="low">a</span><span className="blue">f</span><span className="extreme">e</span>
+        </span>
+        </div>
+        
+        </div>
   <Navbar className="header w-100 sticky-top" >
     <Navbar.Brand className="linkText text-white ml-3" to="/">"UV Safe now, ya hear?"</Navbar.Brand>
     <Nav className="text-right ml-auto ">
       <Link to="/" className="linkText mx-3 link">Home</Link>
       {/* <Link to="/sunscreen" className="linkText mx-3 link">Sunscreen</Link> */}
-      <Link to="/sunscreen" className="linkText mx-3 mr-4 link">Sunscreen</Link>
+      <Link to="/sunscreen" className="linkText mx-3 mr-4 link">Skin Protection</Link>
       {/* <Link to="/hooks" className="linkText mx-3 mr-4 link">Hooks</Link> */}
       <Link to="/about" className="linkText mx-3 mr-4 link">About</Link>
      
