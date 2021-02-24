@@ -2,15 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import BaseLayout from './components/layout/BaseLayout';
-import Hooks from './components/Hooks';
-import Classes from './components/Classes';
-import Testing from './components/Testing';
 import reducer from './reducers/reducer';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './assets/styles.css'
 import {createStore} from 'redux';
 import {Provider} from 'react-redux';
+import Hooks from './components/Hooks';
+import About from './components/About'
+import SunscreenInfo from './components/SunscreenInfo'
 
 
 // for initializing redux store
@@ -28,9 +28,10 @@ ReactDOM.render(
         <BaseLayout>
           <Switch>
             <Route exact path="/" component={App}/>
+            <Route path="/sunscreen" component={SunscreenInfo}/>
             <Route path="/hooks" component={Hooks}/>
-            <Route path="/classes" component={Classes}/>
-            <Route path="/testing" component={Testing}/>
+            <Route path="/about" component={About}/>
+            
           </Switch>
         </BaseLayout>
       </Router>

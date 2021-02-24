@@ -8,7 +8,18 @@ const Hooks = () => {
     const count = useSelector(state => state.counter);
     const dispatch = useDispatch();
     return (
-        <div>
+        <body>
+            <div className="col-5 ml-5">
+            <h3>Safe exposure level for skin tone?</h3>
+            <div><img className="skintone" src="images/skintonescale.png"></img></div>
+            </div>
+
+            <h1>I am hooks</h1>
+            <h2>{count}</h2>
+            <button onClick={()=> dispatch(increment(2))}>Click Me</button>
+            <h1>I am hooks</h1>
+            <h2>{count}</h2>
+            <button onClick={()=> dispatch(increment(2))}>Click Me</button>
             <h1>I am hooks</h1>
             <h2>{count}</h2>
             <button onClick={()=> dispatch(increment(2))}>Click Me</button>
@@ -17,7 +28,7 @@ const Hooks = () => {
             <DivSC bgc="">I am a styled div</DivSC>
             <Paper>this is paper div</Paper>
         */}
-        </div>
+        </body>
     )
 }
 

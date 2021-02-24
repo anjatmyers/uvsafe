@@ -68,7 +68,7 @@ const Header = () => {
                 return 'No time limit';
             }
             else if(min <= 60){
-                return min + " minutes.";
+                return min + " minutes";
             }
             else{
         
@@ -124,15 +124,17 @@ const Header = () => {
     return (
 
 <>
-<div className="backgroundImg2 d-flex flex-column justify-content-end align-items-left" style={{backgroundImage: `url("images/brokenclouds.jpg")`}}>
+<div className="backgroundImg2 d-flex flex-column justify-content-end align-items-left" style={{backgroundImage: `url("images/beachheader.jpg")`}}>
     <div className="headerText"><span className="veryHigh">U</span><span className="high">V</span><span className="moderate">S</span><span className="low">a</span><span className="blue">f</span><span className="extreme">e</span></div>
   <Navbar className="header w-100 sticky-top" >
     <Navbar.Brand className="linkText text-white ml-3" to="/">"UV Safe now, ya hear?"</Navbar.Brand>
     <Nav className="text-right ml-auto ">
       <Link to="/" className="linkText mx-3 link">Home</Link>
-      <Link to="/sunscreen" className="linkText mx-3 link">Sunscreen</Link>
+      {/* <Link to="/sunscreen" className="linkText mx-3 link">Sunscreen</Link> */}
+      <Link to="/sunscreen" className="linkText mx-3 mr-4 link">Sunscreen</Link>
+      {/* <Link to="/hooks" className="linkText mx-3 mr-4 link">Hooks</Link> */}
       <Link to="/about" className="linkText mx-3 mr-4 link">About</Link>
-      {/* <Nav.Link to="#pricing">Pricing</Nav.Link> */}
+     
     </Nav>
     <Form inline>
       <FormControl type="text" placeholder="City" className="mr-sm-2" onChange={(e)=>setCity(e.target.value)}/>

@@ -1,10 +1,8 @@
 import React, {useState, useEffect } from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import {v1 as uuidv1} from 'uuid';
 import Exposure from './components/Exposure';
 import {Card} from 'react-bootstrap';
-import Footer from './components/layout/Footer';
-
+import { useHistory } from "react-router-dom";
 
 
 const App = (props) => {
@@ -12,6 +10,12 @@ const App = (props) => {
   // const [uvData, setUvData] = useState([]);
   const city = useSelector(state => state.city);
   
+  const history = useHistory();
+
+  const routeChange = () =>{ 
+    let path = `/sunscreen`; 
+    history.push(path);
+  }
   
 
   useEffect(() => {
@@ -57,9 +61,13 @@ const App = (props) => {
 
       <div className="col-9">
         <div className="row">
-            <div className="col-2"> <h3>Current UV Level: {city.uvData.uvCurrent}</h3></div>
-            <img className="col-6 uvIndex" src="images/uvindexwheel.png"></img>
-            <div className="col-2"><h3>Max UV Level: {city.uvData.uvMax}</h3></div>
+            
+            <img className="col-6 offset-1 uvIndex" src="images/uvindexwheel.png"></img>
+            <div className="col-3">
+            <div className="col text-white mt-4"> <h3>Current UV Level: {city.uvData.uvCurrent}</h3></div>
+            <div className="col text-white mt-4"><h3>Max UV Level: {city.uvData.uvMax}</h3></div>
+            </div>
+            
         </div>
         {/* end mini uv wheel row */}
       </div>
@@ -67,16 +75,18 @@ const App = (props) => {
         </div>
         {/* end row1 */}
        
-       <div className="row mt-5">
+       <div className="row d-flex justify-content-center mt-5">
 
-        <div className="col-5 mx-5"> <h3>What does precautions are necessary under this range?</h3>
-            <div><img className="uvchart" src="images/uvchart.png"></img></div>
+        <div className=" mx-5"> 
+            <div className="d-flex flex-column justify-content-center align-items-center">
+            <h3 className="text-white">What does precautions are necessary in this range?</h3>
+              <img className="uvchart" src="images/uvchart.png"></img>
+              <div><button type="button" class="btn btn-warning m-2" onClick={routeChange}>How do I protect my skin?</button></div>
+            </div>
+
+            
         </div>
        
-       <div className="col-5 ml-5">
-            <h3>Safe exposure level for skin tone?</h3>
-            <div><img className="skintone" src="images/skintonescale.png"></img></div>
-       </div>
 
        </div>
        {/* end row 2 */}
