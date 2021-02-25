@@ -148,7 +148,7 @@ const Header = () => {
         
         </div>
   <Navbar className="header w-100 sticky-top" >
-    <Navbar.Brand className="linkText text-white ml-3" to="/">"UV Safe now, ya hear?"</Navbar.Brand>
+    <Navbar.Brand className="linkText text-white ml-3" to="/">"UV Safe out there!"</Navbar.Brand>
     <Nav className="text-right ml-auto ">
       <Link to="/" className="linkText mx-3 link">Home</Link>
       {/* <Link to="/sunscreen" className="linkText mx-3 link">Sunscreen</Link> */}

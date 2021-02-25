@@ -27,6 +27,13 @@
     padding: 0px;
 }
 
+.bold{
+    font-weight: 900;
+}
+.bg-grey {
+    background-color: #E9ECEF;
+}
+
 .blue {
     color: rgb(38, 62, 250);
 }
@@ -53,6 +60,11 @@
 .header-img{
   width: 100%;
   
+}
+
+.carousel {
+    height: 300px;
+    margin-top: 50px;
 }
 
 .link:hover {
@@ -91,10 +103,14 @@
     
 }
 
-.skintypeHeading {
-    background-color: lightblue;
-    padding: 30px;
-    border-radius: 50%;
+.margin-top {
+    margin-top: 100px;
+}
+
+.aboutHeading {
+    background-color: #FFD53E;
+    padding: 10px;
+    border-radius: 3%;
     font-style: italic;
 }
 .sunImg{
