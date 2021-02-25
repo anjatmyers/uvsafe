@@ -17,6 +17,7 @@ const initialState = {
                 uvCurrent: 9.2,
                 uvMax: 9.2,
                 uvMaxTime: '2021-02-23T17:35:34.039Z',
+                vitDArr: ['15-20 minutes', '20-30 minutes', '30-40 minutes', '40-60 minutes', '60-80 minutes', '80-90 minutes'],
                 safeExposureTime: ["18 minutes.", "22 minutes.", "29 minutes.", "36 minutes.", "58 minutes.", "1 hour 48 minutes"]
             }
     }
@@ -34,6 +35,7 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 city: action.data
             }
+
 
         default: 
         return state;

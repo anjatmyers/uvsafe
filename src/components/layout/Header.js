@@ -62,6 +62,19 @@ const Header = () => {
         let uvMaxTime = data.result.uv_max_time
         let safeExposureTime = data.result.safe_exposure_time;
         let minutesArr = Object.values(safeExposureTime);
+        let vitDArr = ['15-20 minutes', '20-30 minutes', '30-40 minutes', '40-60 minutes', '60-80 minutes', '80-90 minutes']
+
+        if (uvCurrent < 3){
+            vitDArr = vitDArr
+        } else if(uvCurrent < 6 && uvCurrent >=3 ){
+            vitDArr = ['10-15 minutes', '15-20 minutes', '20-30 minutes', '30-40 minutes', '40-60 minutes', '60-80 minutes']
+        } else if (uvCurrent < 8 && uvCurrent >=6){
+            vitDArr = ['5-10 minutes', '10-15 minutes', '15-20 minutes', '20-30 minutes', '30-40 minutes', '40-60 minutes']
+        } else if (uvCurrent < 11 && uvCurrent >= 8){
+            vitDArr = ['2-8 minutes', '5-10 minutes', '10-15 minutes', '15-20 minutes', '20-30 minutes', '30-40 minutes']
+        } else if (uvCurrent > 11){
+            vitDArr = ['1-5 minutes', '2-8 minutes', '5-10 minutes', '10-15 minutes', '15-20 minutes', '20-30 minutes']
+        }
 
         let valuesInMinutes = minutesArr.map((min) => {
             if (min === null){
@@ -88,7 +101,7 @@ const Header = () => {
 
         
         console.log(uvCurrent, uvMax, uvMaxTime, safeExposureTime);
-        console.log(valuesInMinutes);
+        console.log(valuesInMinutes, 'vitamin D arr', vitDArr);
 
 
         let newCity = {
@@ -109,6 +122,7 @@ const Header = () => {
                 uvCurrent: uvCurrent,
                 uvMax: uvMax,
                 uvMaxTime: uvMaxTime,
+                vitDArr: vitDArr,
                 safeExposureTime: valuesInMinutes
             }
         }

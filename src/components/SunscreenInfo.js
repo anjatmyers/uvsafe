@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
+import Weather from './Weather';
 
 
 const SuncreenInfo = () => {
@@ -7,12 +8,18 @@ const SuncreenInfo = () => {
     const city = useSelector(state => state.city);
 
     const [type, setType] = useState();
+    const [minutes, setMinutes] = useState();
+    const [clicked, setClicked] = useState(false);
+    
 
     const handleTypeChange = (e) => {
         
         let newType = city.uvData.safeExposureTime[e.target.value]
+        let newMinutes = city.uvData.vitDArr[e.target.value]
 
+        setClicked(true);
         setType(newType);
+        setMinutes(newMinutes);
     }
     
     
@@ -20,8 +27,16 @@ const SuncreenInfo = () => {
         <div className="backgroundImg" style={{backgroundImage: `url("images/beach.jpg")`}}>
 
             <div className="container-fluid">
-            <div className="col-11 d-flex flex-column align-items-center justify-content-center">
-            <h3 className="mt-5"> <span className="skintypeHeading">Select a skin type to learn more:</span> </h3>
+
+            <div className="col-3 text-white " >
+       
+                <Weather city={city}/>
+
+  
+            </div>
+
+            <div className="col-10 offset-1 d-flex flex-column align-items-center justify-content-center">
+            {/* <h3 className="mt-5"> <span className="skintypeHeading">Select a skin type to learn more:</span> </h3> */}
             <div className=" mt-5 d-flex col-7 ">
 
             <button type="button" className="button type1 m-2" value={0} onClick={handleTypeChange}>Type I</button> 
@@ -33,19 +48,20 @@ const SuncreenInfo = () => {
             </div>
 
             <div className="d-flex justify-content-center">
-            <div class="jumbotron ml-5 mt-4">
+            <div className="jumbotron ml-5 mt-5">
                 <h2 className="display-4">{type}</h2>
-                <p class="lead">This is the length of sun exposure that is safe for this skin type given the current UV level.</p>
-                <hr class="my-4"></hr>
-                <h2 className="display-4">{type}</h2>
-                <p class="lead">This is how long it would take this skin type to get their daily dose of vitamin D given the current UV level.</p>
+                <p className="lead"> <span>{clicked ? 'This is the length of sun exposure that is safe for this skin type given the current UV level.' : "Select a skin type above for more information"} </span></p>
+                <hr className="my-4"></hr>
+                <h2 className="display-4">{minutes}</h2>
+                <p className="lead"> <span>{clicked ? 'This is how long it would take this skin type to get sufficient daily vitamin D given the current UV level.' : ''}</span> </p>
               
                 </div>
 
-            </div>
+                </div>
             
             </div>
-
+            
+            
 
             </div>
             {/* end of container div */}
