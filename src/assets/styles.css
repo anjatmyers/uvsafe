@@ -34,6 +34,11 @@
     background-color: #E9ECEF;
 }
 
+.sunSize {
+    height: 75px;
+    margin-left: 20px;
+}
+
 .blue {
     color: rgb(38, 62, 250);
 }

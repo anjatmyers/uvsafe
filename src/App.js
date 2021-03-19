@@ -10,7 +10,6 @@ const App = (props) => {
 
   // const [uvData, setUvData] = useState([]);
   const city = useSelector(state => state.city);
-  
   const history = useHistory();
 
   const routeChange = () =>{ 
@@ -18,17 +17,6 @@ const App = (props) => {
     history.push(path);
   }
   
-
-  useEffect(() => {
-    const setData = async () => {
-    
-      console.log(city)
-      
-    };
-    setData();
-  }, []);
-
-
 
 
   return (
@@ -53,8 +41,14 @@ const App = (props) => {
       <div className="col-7 ml-4 mt-5">
                 <div className="jumbotron jumbotron-fluid uvCard">
                   <div className="container">
-                    <h1 className="display-4">Current UV level: {city.uvData.uvCurrent}</h1>
-                    <h1 className="display-5">Max UV level today: {city.uvData.uvMax}</h1>
+                    <div className="d-flex"> 
+                      <h1 className="display-4">Current UV level: {city.uvData.uvCurrent}</h1>
+                      <img className=" sunSize" src={city.uvData.levelUrl} ></img>
+                    </div>
+                    <div className="d-flex"> 
+                      <h1 className="display-5">Max UV level today: {city.uvData.uvMax}</h1>
+                      <img className=" sunSize" src={city.uvData.levelMaxUrl} ></img>
+                    </div>
                     <p className="lead">UV levels are typically at a max between 10am-2pm during what is refered to as 'solar noon.' Your skin is at greatest risk of damage during this time of the day.</p>
                   </div>
             </div>

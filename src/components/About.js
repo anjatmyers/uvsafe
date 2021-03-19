@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import {connect} from 'react-redux';
 import {Carousel} from 'react-bootstrap';
 
-export class Classes extends Component {
+export class About extends Component {
     render() {
         return (
             <div className="backgroundImg" style={{backgroundImage: `url("images/beach.jpg")`}}>
@@ -98,4 +98,4 @@ export class Classes extends Component {
 // connect takes two functions:
 // 1 for pulling down state
 // 2 for updating state
-export default connect(null, null)(Classes)
+export default connect(null, null)(About)

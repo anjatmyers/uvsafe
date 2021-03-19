@@ -53,7 +53,6 @@ const Header = () => {
     
         request(options, function (error, response, body) {
         if (error) {
-          
         };
         
         let data = JSON.parse(body)
@@ -62,18 +61,36 @@ const Header = () => {
         let uvMaxTime = data.result.uv_max_time
         let safeExposureTime = data.result.safe_exposure_time;
         let minutesArr = Object.values(safeExposureTime);
-        let vitDArr = ['15-20 minutes', '20-30 minutes', '30-40 minutes', '40-60 minutes', '60-80 minutes', '80-90 minutes']
+        let vitDArr = ['15-20 minutes', '20-30 minutes', '30-40 minutes', '40-60 minutes', '60-80 minutes', '80-90 minutes'];
+        let levelUrl = 'images/low.png';
+        let levelMaxUrl = 'images/low.png'
 
         if (uvCurrent < 3){
             vitDArr = vitDArr
+            levelUrl = levelUrl
         } else if(uvCurrent < 6 && uvCurrent >=3 ){
             vitDArr = ['10-15 minutes', '15-20 minutes', '20-30 minutes', '30-40 minutes', '40-60 minutes', '60-80 minutes']
+            levelUrl = 'images/moderate.png'
         } else if (uvCurrent < 8 && uvCurrent >=6){
             vitDArr = ['5-10 minutes', '10-15 minutes', '15-20 minutes', '20-30 minutes', '30-40 minutes', '40-60 minutes']
+            levelUrl = 'images/high.png'
         } else if (uvCurrent < 11 && uvCurrent >= 8){
             vitDArr = ['2-8 minutes', '5-10 minutes', '10-15 minutes', '15-20 minutes', '20-30 minutes', '30-40 minutes']
+            levelUrl = 'images/veryHigh.png'
         } else if (uvCurrent > 11){
             vitDArr = ['1-5 minutes', '2-8 minutes', '5-10 minutes', '10-15 minutes', '15-20 minutes', '20-30 minutes']
+            levelUrl = 'images/extreme.png'
+        }
+        if (uvMax < 3){
+            levelMaxUrl = levelMaxUrl
+        } else if(uvMax < 6 && uvMax >=3 ){
+            levelMaxUrl = 'images/moderate.png'
+        } else if (uvMax < 8 && uvMax >=6){
+            levelMaxUrl = 'images/high.png'
+        } else if (uvMax < 11 && uvMax >= 8){
+            levelMaxUrl = 'images/veryHigh.png'
+        } else if (uvMax > 11){
+            levelMaxUrl = 'images/extreme.png'
         }
 
         let valuesInMinutes = minutesArr.map((min) => {
@@ -123,6 +140,8 @@ const Header = () => {
                 uvMax: uvMax,
                 uvMaxTime: uvMaxTime,
                 vitDArr: vitDArr,
+                levelUrl: levelUrl,
+                levelMaxUrl: levelMaxUrl,
                 safeExposureTime: valuesInMinutes
             }
         }
