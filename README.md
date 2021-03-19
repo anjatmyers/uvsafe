@@ -2,6 +2,9 @@
 
 ## "UVSafe out there!"
 
+### VIDEO LINK 
+* [Walkthrough](https://www.youtube.com/watch?v=HIo23U668sw?rel=0)
+
 <img src="public/images/uvsafezoomedout.png">
 
 > UVSafe is a front-end site built with React/Redux. It makes use of an Open Weather API that returns coordinates of the searched city which are needed to make a second API call to the Open UV API for this same location. State is used to pass UV levels and weather data to separate components to make for a consistent and responsive UI/UX. The design utilized HTML/CSS, React Bootstrap and Adobe Illustrator to make the UVSafe logo.  
